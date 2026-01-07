@@ -1,0 +1,48 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: white;
+  border-collapse: separate; // ★重要
+  border-spacing: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow:
+    1px 0 0 rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(0, 0, 0, 0.2);
+
+  th,
+  td {
+    padding: 16px;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    text-align: right;
+  }
+  td:nth-child(2){
+    text-align: left;
+  }
+
+  thead {
+    th {
+      font-weight: 550;
+      color: black;
+      background-color: white;
+    }
+  }
+
+  tbody {
+    tr {
+      height: 56px;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+}

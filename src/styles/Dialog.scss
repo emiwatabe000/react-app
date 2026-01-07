@@ -1,0 +1,45 @@
+.dialog-wrapper{
+  button {
+    background: none;
+    border: solid 1px royalblue;
+    color: royalblue;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 10px;
+  }
+}
+.dialog {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h2 {
+  margin: 0;
+}
+p{
+  margin-top: 20px;
+}
+
+.dialog-content {
+  background: #fff;
+  padding: 30px 30px 10px 30px;
+  width: 500px;
+  height: 150px;
+  font-size: 15px;
+  text-align: left;
+  border-radius: 5px;
+
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+  button {
+    color: royalblue;
+    background: none;
+    border: none;
+    padding-top: 30px;
+  }
+}
