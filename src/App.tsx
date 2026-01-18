@@ -7,18 +7,17 @@ import {
   FormControl, 
   FormLabel, 
   FormGroup, 
-  FormControlLabel, 
   RadioGroup, 
   InputLabel, 
   Box,
 } from '@mui/material';
 
-import { CustomButton } from './components/atoms/Button';
-import { CustomCheckbox } from './components/atoms/Checkbox';
-import { CustomRadio } from './components/atoms/Radio';
+import { TextButton, ContainedButton, OutlinedButton } from './components/atoms/Button';
+import { NormalCheckBox, RequiredCheckBox, DisabledCheckBox } from './components/atoms/Checkbox';
+import { FemaleRadio, MaleRadio, OtherRadio, DisabledRadio } from './components/atoms/Radio';
 import { CustomSelect } from './components/atoms/Select';
-import { CustomSwitch } from './components/atoms/Switch'
-import { CustomTextField } from './components/atoms/TextField'
+import { NormalSwitch, RequiredSwitch, DisabledSwitch } from './components/atoms/Switch'
+import { OutlinedTextField, FilledTextField, StandardTextField } from './components/atoms/TextField'
 import { CustomTooltip } from './components/atoms/Tooltip'
 import { CustomTable } from './components/atoms/Table'
 import { CustomPagination } from './components/atoms/Pagination'
@@ -59,17 +58,17 @@ function App() {
       <header className="App-header">
       <div id='button'>
         <Stack spacing={2} direction="row">
-          <CustomButton variant="text" size='small' color='primary'>Text</CustomButton>
-          <CustomButton variant="contained" size='medium' color='secondary'>Text</CustomButton>
-          <CustomButton variant="outlined" size='large' color='error'>Text</CustomButton>
+          <TextButton size='small' color='primary'>Text</TextButton>
+          <ContainedButton size='medium' color='secondary'>Text</ContainedButton>
+          <OutlinedButton size='large' color='error'>Text</OutlinedButton>
         </Stack>
       </div>
       <br />
       <div id='checkbox'>
         <FormGroup>
-          <FormControlLabel control={<CustomCheckbox defaultChecked size='small' color='primary' />} label="Label" />
-          <FormControlLabel required control={<CustomCheckbox size='small' color='secondary' />} label="Required" />
-          <FormControlLabel disabled control={<CustomCheckbox size='small' />} label="Disabled" />
+          <NormalCheckBox defaultChecked size='small' color='primary' />
+          <RequiredCheckBox size='small' color='secondary' />
+          <DisabledCheckBox size='small' />
         </FormGroup>
       </div>
       <br />
@@ -81,15 +80,10 @@ function App() {
               aria-labelledby="demo-row-radio-buttons-group-label"
               name="row-radio-buttons-group"
             >
-              <FormControlLabel value="female" control={<CustomRadio size='small' color='secondary'/>} label="Female" />
-              <FormControlLabel value="male" control={<CustomRadio size='small' color='success' />} label="Male" />
-              <FormControlLabel value="other" control={<CustomRadio size='small' color='default' />} label="Other" />
-              <FormControlLabel
-                value="disabled"
-                disabled
-                control={<CustomRadio />}
-                label="other"
-              />
+              <FemaleRadio size='small' color='secondary' />
+              <MaleRadio size='small' color='success' />
+              <OtherRadio size='small' color='default' />
+              <DisabledRadio size='small' />
             </RadioGroup>
           </FormControl>
       </div>
@@ -98,10 +92,7 @@ function App() {
         <FormControl sx={{ width: 100 }}>
           <InputLabel id="demo-simple-select-label">Age</InputLabel>
           <CustomSelect
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
             value={age}
-            label="Age"
             onChange={handleChange}
             options={options}
           />
@@ -110,9 +101,9 @@ function App() {
       <br />
       <div id='switch'>
         <FormGroup>
-          <FormControlLabel control={<CustomSwitch defaultChecked size='small' color='secondary' />} label="Label" />
-          <FormControlLabel required control={<CustomSwitch size='small' color='warning' />} label="Required" />
-          <FormControlLabel disabled control={<CustomSwitch size='small' color='default'/>} label="Disabled" />
+          <NormalSwitch size='medium' color='secondary' />
+          <RequiredSwitch size='medium' color='warning' />
+          <DisabledSwitch size='medium' />
         </FormGroup>
       </div>
       <br />
@@ -123,9 +114,9 @@ function App() {
         noValidate
         autoComplete="off"
         >
-          <CustomTextField id="outlined-basic" label="Outlined" variant="outlined" size='small' color='secondary' />
-          <CustomTextField id="filled-basic" label="Filled" variant="filled" size='small' color='success' />
-          <CustomTextField id="standard-basic" label="Standard" variant="standard" size='small' color='warning' />
+          <OutlinedTextField size='small' color='secondary' />
+          <FilledTextField size='small' color='success' />
+          <StandardTextField size='small' color='warning' />
         </Box>
       </div>
       <br />
@@ -139,7 +130,7 @@ function App() {
       <br />
       <div id='pagination'>
         <Stack spacing={2}>
-          <CustomPagination count={10} shape="rounded" />
+          <CustomPagination count={10} />
         </Stack>
       </div>
       <br />

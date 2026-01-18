@@ -10,9 +10,15 @@ type CustomSelectProps = SelectProps & {
   options: Option[];
 };
 
-export function CustomSelect({ options, ...props }: CustomSelectProps) {
+export function CustomSelect({ value, onChange, options }: CustomSelectProps) {
   return (
-    <Select {...props}>
+    <Select 
+      labelId="demo-simple-select-label"
+      id="demo-simple-select"
+      label="Age"
+      value={value}
+      onChange={onChange}
+    >
       {options.map((option) => (
         <MenuItem key={option.value} value={option.value}>
           {option.label}
