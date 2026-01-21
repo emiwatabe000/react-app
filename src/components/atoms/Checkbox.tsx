@@ -1,48 +1,65 @@
 import React from "react";
-import { Checkbox, CheckboxProps, FormControlLabel } from "@mui/material";
+import { Checkbox, FormControlLabel } from "@mui/material";
 
-export function NormalCheckBox({checked, color, size} : CheckboxProps){
+type CustomCheckboxProps = {
+  size?: 'medium'
+        | 'small'
+        | 'large';
+  color?: 'default'
+        | 'primary'
+        | 'secondary'
+        | 'error'
+        | 'info'
+        | 'success'
+        | 'warning';
+  label: string;
+  checked: boolean;
+  onChange: () => void;
+}
+
+export function NormalCheckBox({size, color, label, checked, onChange} : CustomCheckboxProps){
   return (
     <FormControlLabel 
       control={
         <Checkbox 
-          checked = {checked}
-          color = {color}
-          size = {size}
-        />
-      } 
-      label="Label" 
+          size={size}
+          color={color}
+          checked={checked}
+          onChange={onChange}
+        />} 
+      label={label}
     />
   );
 }
 
-export function RequiredCheckBox({checked, color, size} : CheckboxProps){
+export function RequiredCheckBox({size, color, label, checked, onChange} : CustomCheckboxProps){
   return (
     <FormControlLabel 
       required
       control={
         <Checkbox 
-          checked = {checked}
-          color = {color}
-          size = {size}
-        />
-      } 
-      label="Required" 
+          size={size}
+          color={color}
+          checked={checked}
+          onChange={onChange}
+        />} 
+      label={label}
     />
   );
 }
 
-export function DisabledCheckBox({checked, size} : CheckboxProps){
+export function DisabledCheckBox({size, color, label, checked, onChange} : CustomCheckboxProps){
   return (
     <FormControlLabel 
       disabled
       control={
         <Checkbox 
-          checked = {checked}
-          size = {size}
-        />
-      } 
-      label="Disabled" 
+          size={size}
+          color={color}
+          checked={checked}
+          onChange={onChange}
+        />} 
+      label={label}
     />
   );
 }

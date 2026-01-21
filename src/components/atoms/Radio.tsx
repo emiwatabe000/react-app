@@ -1,61 +1,67 @@
 import React from "react";
-import { Radio, RadioProps, FormControlLabel } from "@mui/material";
+import { Radio, FormControlLabel } from "@mui/material";
 
-export function FemaleRadio({color, size} : RadioProps){
+type CustomRadioProps = {
+  label: string;
+  value: string;
+  size?: 'medium'
+        | 'small';
+  color?: 'default'
+        | 'primary'
+        | 'secondary'
+        | 'error'
+        | 'info'
+        | 'success'
+        | 'warning';
+  checked: boolean;
+  onChange: () => void;
+}
+
+export function NormalRadio({
+  label,
+  value,
+  size,
+  color,
+  checked,
+  onChange,
+}: CustomRadioProps) {
   return (
-    <FormControlLabel 
-      value = "female"
+    <FormControlLabel
+      value={value}
       control={
-        <Radio 
-          color = {color}
-          size = {size}
+        <Radio
+          size={size}
+          color={color}
+          checked={checked}
+          onChange={onChange}
         />
-      } 
-      label="Female" 
+      }
+      label={label}
     />
   );
 }
 
-export function MaleRadio({color, size} : RadioProps){
+export function DisabledRadio({
+  label,
+  value,
+  size,
+  color,
+  checked,
+  onChange,
+}: CustomRadioProps) {
   return (
-    <FormControlLabel 
-      value = "male"
-      control={
-        <Radio 
-          color = {color}
-          size = {size}
-        />
-      } 
-      label="Male" 
-    />
-  );
-}
-
-export function OtherRadio({size, color} : RadioProps){
-  return (
-    <FormControlLabel 
-      value = "other"
-      control={
-        <Radio 
-          color = {color}
-          size = {size}
-        />
-      } 
-      label="Other" 
-    />
-  );
-}
-export function DisabledRadio({size} : RadioProps){
-  return (
-    <FormControlLabel 
-      value = "disabled"
+    <FormControlLabel
+      value={value}
       disabled
       control={
-        <Radio 
-          size = {size}
+        <Radio
+          size={size}
+          color={color}
+          checked={checked}
+          onChange={onChange}
         />
-      } 
-      label="Disabled" 
+      }
+      label={label}
     />
   );
 }

@@ -1,7 +1,20 @@
 import React from "react";
-import { TextField, TextFieldProps } from "@mui/material";
+import { TextField } from "@mui/material";
 
-export function OutlinedTextField({color, size} : TextFieldProps){
+type CustomTextFieldProps = {
+  size?: 'medium'
+        | 'small';
+  color?: 'primary'
+        | 'secondary'
+        | 'error'
+        | 'info'
+        | 'success'
+        | 'warning';
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export function OutlinedTextField({color, size, value, onChange} : CustomTextFieldProps){
   return (
     <TextField 
       id="outlined-basic"
@@ -9,11 +22,13 @@ export function OutlinedTextField({color, size} : TextFieldProps){
       variant="outlined"
       color = {color}
       size = {size}
+      value = {value}
+      onChange = {onChange}
     />
   );
 }
 
-export function FilledTextField({color, size} : TextFieldProps){
+export function FilledTextField({color, size, value, onChange} : CustomTextFieldProps){
   return (
     <TextField
       id="filled-basic"
@@ -21,11 +36,13 @@ export function FilledTextField({color, size} : TextFieldProps){
       variant="filled"
       color = {color}
       size = {size}
+      value = {value}
+      onChange = {onChange}
     />
   );
 }
 
-export function StandardTextField({color, size} : TextFieldProps){
+export function StandardTextField({color, size, value, onChange} : CustomTextFieldProps){
   return (
     <TextField 
       id="standard-basic"
@@ -33,6 +50,8 @@ export function StandardTextField({color, size} : TextFieldProps){
       variant="standard"
       size = {size}
       color = {color}
+      value = {value}
+      onChange = {onChange}
     />
   );
 }

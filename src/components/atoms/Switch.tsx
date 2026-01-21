@@ -1,45 +1,67 @@
 import React from "react";
-import { Switch, SwitchProps, FormControlLabel } from "@mui/material";
+import { Switch, FormControlLabel } from "@mui/material";
 
-export function NormalSwitch({color, size} : SwitchProps){
+type CustomSwitchProps = {
+  label: string;
+  size?: 'medium'
+        | 'small';
+  color?: 'default'
+        | 'primary'
+        | 'secondary'
+        | 'error'
+        | 'info'
+        | 'success'
+        | 'warning';
+  checked: boolean;
+  onChange: () => void;
+}
+
+export function NormalSwitch({size, color, label, checked, onChange} : CustomSwitchProps){
   return (
     <FormControlLabel 
       control={
         <Switch 
-          color = {color}
-          size = {size}
+          size={size}
+          color={color}
+          checked={checked}
+          onChange={onChange}
         />
       } 
-      label="Label" 
+      label={label}
     />
   );
 }
 
-export function RequiredSwitch({color, size} : SwitchProps){
+export function RequiredSwitch({size, color, label, checked, onChange} : CustomSwitchProps){
   return (
     <FormControlLabel 
       required
       control={
         <Switch 
-          color = {color}
-          size = {size}
+          size={size}
+          color={color}
+          checked={checked}
+          onChange={onChange}
         />
       } 
-      label="Required" 
+      label={label}
     />
   );
 }
 
-export function DisabledSwitch({size} : SwitchProps){
+export function DisabledSwitch({size, color, label, checked, onChange} : CustomSwitchProps){
   return (
     <FormControlLabel 
       disabled
       control={
         <Switch 
-          size = {size}
+          size={size}
+          color={color}
+          checked={checked}
+          onChange={onChange}
         />
       } 
-      label="Disabled" 
+      label={label}
     />
   );
 }

@@ -6,8 +6,8 @@ import MenuItem from '@mui/material/MenuItem';
 type CustomMenuProps = {
   buttonLabel: string;
   menu1: string;
-  menu2: string;
-  menu3: string;
+  menu2?: string;
+  menu3?: string;
 }
 
 export function CustomMenu({ buttonLabel, menu1, menu2, menu3 }: CustomMenuProps) {
