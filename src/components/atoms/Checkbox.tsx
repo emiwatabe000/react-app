@@ -13,8 +13,8 @@ type CustomCheckboxProps = {
         | 'success'
         | 'warning';
   label: string;
-  checked: boolean;
-  onChange: () => void;
+  checked?: boolean;
+  onChange?: () => void;
 }
 
 export function NormalCheckBox({size, color, label, checked, onChange} : CustomCheckboxProps){

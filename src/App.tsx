@@ -14,7 +14,7 @@ import {
 
 import { TextButton, ContainedButton, OutlinedButton } from './components/atoms/Button';
 import { NormalCheckBox, RequiredCheckBox, DisabledCheckBox } from './components/atoms/Checkbox';
-import { FemaleRadio, MaleRadio, OtherRadio, DisabledRadio } from './components/atoms/Radio';
+import { NormalRadio, DisabledRadio } from './components/atoms/Radio';
 import { CustomSelect } from './components/atoms/Select';
 import { NormalSwitch, RequiredSwitch, DisabledSwitch } from './components/atoms/Switch'
 import { OutlinedTextField, FilledTextField, StandardTextField } from './components/atoms/TextField'
@@ -66,9 +66,9 @@ function App() {
       <br />
       <div id='checkbox'>
         <FormGroup>
-          <NormalCheckBox defaultChecked size='small' color='primary' />
-          <RequiredCheckBox size='small' color='secondary' />
-          <DisabledCheckBox size='small' />
+          <NormalCheckBox label='Label' size='small' color='primary' />
+          <RequiredCheckBox label='Reauired' size='small' color='secondary' />
+          <DisabledCheckBox label='Disabled' size='small' />
         </FormGroup>
       </div>
       <br />
@@ -80,10 +80,10 @@ function App() {
               aria-labelledby="demo-row-radio-buttons-group-label"
               name="row-radio-buttons-group"
             >
-              <FemaleRadio size='small' color='secondary' />
-              <MaleRadio size='small' color='success' />
-              <OtherRadio size='small' color='default' />
-              <DisabledRadio size='small' />
+              <NormalRadio value='female' label='felame' size='small' color='secondary' />
+              <NormalRadio value='male' label='lame' size='small' color='success' />
+              <NormalRadio value='other' label='other' size='small' color='default' />
+              <DisabledRadio value='disabled' label='disabled' size='small' />
             </RadioGroup>
           </FormControl>
       </div>
@@ -101,9 +101,9 @@ function App() {
       <br />
       <div id='switch'>
         <FormGroup>
-          <NormalSwitch size='medium' color='secondary' />
-          <RequiredSwitch size='medium' color='warning' />
-          <DisabledSwitch size='medium' />
+          <NormalSwitch label='Label' size='medium' color='secondary' />
+          <RequiredSwitch label='Required' size='medium' color='warning' />
+          <DisabledSwitch label='Disabled' size='medium' />
         </FormGroup>
       </div>
       <br />
@@ -114,9 +114,9 @@ function App() {
         noValidate
         autoComplete="off"
         >
-          <OutlinedTextField size='small' color='secondary' />
-          <FilledTextField size='small' color='success' />
-          <StandardTextField size='small' color='warning' />
+          <OutlinedTextField value='Outlined' size='small' color='secondary' />
+          <FilledTextField value='Filled' size='small' color='success' />
+          <StandardTextField value='Standard' size='small' color='warning' />
         </Box>
       </div>
       <br />

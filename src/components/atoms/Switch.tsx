@@ -12,8 +12,8 @@ type CustomSwitchProps = {
         | 'info'
         | 'success'
         | 'warning';
-  checked: boolean;
-  onChange: () => void;
+  checked?: boolean;
+  onChange?: () => void;
 }
 
 export function NormalSwitch({size, color, label, checked, onChange} : CustomSwitchProps){
