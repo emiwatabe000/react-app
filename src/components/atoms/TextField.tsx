@@ -11,7 +11,7 @@ type CustomTextFieldProps = {
         | 'success'
         | 'warning';
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export function OutlinedTextField({color, size, value, onChange} : CustomTextFieldProps){

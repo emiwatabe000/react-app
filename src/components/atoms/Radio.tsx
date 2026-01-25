@@ -13,8 +13,8 @@ type CustomRadioProps = {
         | 'info'
         | 'success'
         | 'warning';
-  checked: boolean;
-  onChange: () => void;
+  checked?: boolean;
+  onChange?: () => void;
 }
 
 export function NormalRadio({
